@@ -140,7 +140,11 @@
                                 <action selector="cancelButtonPressed:" destination="bTF-xQ-nZd" id="nJk-PM-EGu"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="BBC-Gy-bGa"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="BBC-Gy-bGa">
+                            <connections>
+                                <segue destination="6nn-I6-WkH" kind="unwind" unwindAction="unwindFromDetailWithSegue:" id="XA4-Bf-rc9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="aYK-rZ-hun" id="ltt-Tr-5cm"/>
@@ -150,6 +154,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ma-Bz-Rja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="6nn-I6-WkH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2685.507246376812" y="82.366071428571431"/>
         </scene>
@@ -188,7 +193,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2o-VU-PpS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775.3623188405797" y="82.366071428571431"/>
+            <point key="canvasLocation" x="1851" y="-629"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

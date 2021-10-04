@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 class ToDoItems {
     var itemsArray: [ToDoItem] = []
@@ -21,6 +22,7 @@ class ToDoItems {
         } catch {
             print("Could not save data")
         }
+        setNotifications()
     }
     
     
@@ -36,5 +38,21 @@ class ToDoItems {
                 print("Could not load data")
             }
             completed()
+    }
+    
+    func setNotifications() {
+        guard itemsArray.count > 0 else {
+            return
+        }
+        //remove notifications
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        
+        //recreate with the saved data
+        for index in 0..<itemsArray.count {
+            if itemsArray[index].reminderSet {
+                let toDoItem = itemsArray[index]
+                itemsArray[index].notificationID = LocalNotificaitonManager.setCalendarNotification(title: toDoItem.name, subtitle: "", body: toDoItem.notes, badgeNumber: nil, sound: .default, date: toDoItem.date)
+            }
+        }
     }
 }

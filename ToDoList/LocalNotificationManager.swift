@@ -46,7 +46,7 @@ struct LocalNotificaitonManager {
         }
     }
     
-    static func setCalendarNotification(title: String, subtitle: String, body: String, badgeNumber: NSNumber?, sound: UNNotificationSound?, date: Date) -> String {
+func setCalendarNotification(title: String, subtitle: String, body: String, badgeNumber: NSNumber?, sound: UNNotificationSound?, date: Date) -> String {
         //create content
         let content = UNMutableNotificationContent()
         
